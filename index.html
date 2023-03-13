@@ -4,85 +4,174 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <ul>
-            <li>
-              20ºC
+      <div class="mini-container">
+        <div>
+          <ul class="date-city-hour">
+            <li id="date">Monday 13th March 2023</li>
+            <li class="city">
+              <span id="city">Barcelona</span>
             </li>
-            <li>
-              Feels like 15ºC
-            </li>
+            <li id="time" class="time">7:49h</li>
           </ul>
         </div>
-           </div>
-          <div class="row">
-            <div class="col-4">
-              <ul>
-                <li>
-                  Min 5ºC
-                </li>
-                <li>
-                  Pressure 
-                </br> 29
-                </li>
-              </ul>
-              </div>
+        <div class="circle">
+          <div class="content-circle">
+            <ul class="temp">
+              <li class="temp-now">
+                <span id="number-temp">20</span>º<span class="celsius">C</span>
+                |
+                <span class="fahrenheit">F</span>
+              </li>
+              <li class="temp-feels">Feels like 15ºC</li>
+            </ul>
 
+            <div id="middle-row" class="row">
               <div class="col-4">
-                <ul>
-                  <li>
-                    <ul>
-                      <li>
-                         <img src="" alt="" />
-                      </li>
-                      <li>
-                        Sunny
-                      </li>
-                   
-                  </ul>
+                <ul class="ul-temp-pressure">
+                  <li class="min-temp">Min <span id="min-temp">5</span>ºC</li>
+                  <hr />
+                  <li class="pressure">
+                    Pressure
+                    <br />
+                    <span id="pressure">29</span>hPa
                   </li>
                 </ul>
               </div>
 
               <div class="col-4">
-                <ul>
+                <ul class="ul-center-img">
                   <li>
-                    Max 20ºC
+                    <img
+                      id="image-temp-now"
+                      src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/413/original/hurricaine.png?1674061780"
+                      alt="snowy"
+                    />
                   </li>
-                  <li>
-                    Visibility 
-                  </br> 6.2 miles
-                </li>
+                  <br />
+                  <li id="description">Tornado</li>
                 </ul>
               </div>
-              <div class="row">
-                <div class="col-12">
-                  <ul>
-                    <li>
-                      Wind speed 5m/s
-                    </li>
-                    <li>
-                      Humidity 40%
-                    </li>
-                  </ul>
-                </div>
+
+              <div class="col-4">
+                <ul class="ul-temp-visibility">
+                  <li>Max <span id="max-temp">20</span>ºC</li>
+                  <hr />
+                  <li>
+                    Visibility
+                    <br />
+                    <span id="visibility">6.2</span>m
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div id="wind-humidity-row" class="row">
+              <div class="col-12">
+                <ul class="ul-wind-humidity">
+                  <li>Wind speed <span id="wind-speed">5</span>m/s</li>
+                  <li>Humidity <span id="humidity">40</span>%</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-     
+        <div id="days" class="row">
+          <div id="col-days" class="col-2">
+            <ul id="ul-days" class="tomorrow">
+              <li id="li-days" class="img-tomorrow">
+                <img
+                  class="img-forecast"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/412/original/rainy.png?1674061772"
+                  alt=""
+                />
+              </li>
+              <li id="li-days" class="tomorrow">Tomorrow</li>
+              <li id="li-days" class="temp-tomorrow">15ºC</li>
+            </ul>
+          </div>
+
+          <div id="col-days" class="col-2">
+            <ul id="ul-days" class="tomorrow">
+              <li id="li-days" class="img-tomorrow">
+                <img
+                  class="img-forecast"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/410/original/sunny.png?1674061754"
+                  alt=""
+                />
+              </li>
+              <li id="li-days" class="tomorrow">Tomorrow</li>
+              <li id="li-days" class="temp-tomorrow">15ºC</li>
+            </ul>
+          </div>
+
+          <div id="col-days" class="col-2">
+            <ul id="ul-days" class="tomorrow">
+              <li id="li-days" class="img-tomorrow">
+                <img
+                  class="img-forecast"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/411/original/snowy.png?1674061767"
+                  alt=""
+                />
+              </li>
+              <li id="li-days" class="tomorrow">Tomorrow</li>
+              <li id="li-days" class="temp-tomorrow">15ºC</li>
+            </ul>
+          </div>
+
+          <div id="col-days" class="col-2">
+            <ul id="ul-days" class="tomorrow">
+              <li id="li-days" class="img-tomorrow">
+                <img
+                  class="img-forecast"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/415/original/windy.png?1674061801"
+                  alt=""
+                />
+              </li>
+              <li id="li-days" class="tomorrow">Tomorrow</li>
+              <li id="li-days" class="temp-tomorrow">15ºC</li>
+            </ul>
+          </div>
+
+          <div id="col-days" class="col-2">
+            <ul id="ul-days" class="tomorrow">
+              <li id="li-days" class="img-tomorrow">
+                <img
+                  class="img-forecast"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/414/original/cloudy.png?1674061788"
+                  alt=""
+                />
+              </li>
+              <li id="li-days" class="tomorrow">Tomorrow</li>
+              <li id="li-days" class="temp-tomorrow">15ºC</li>
+            </ul>
+          </div>
+
+          <div id="col-days" class="col-2">
+            <ul id="ul-days" class="tomorrow">
+              <li id="li-days" class="img-tomorrow">
+                <img
+                  class="img-forecast"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/417/original/tsunami.png?1674062061"
+                  alt=""
+                />
+              </li>
+              <li id="li-days" class="tomorrow">Tomorrow</li>
+              <li id="li-days" class="temp-tomorrow">15ºC</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="src/weather-app.js"></script>
   </body>
