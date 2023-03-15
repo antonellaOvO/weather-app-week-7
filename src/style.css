@@ -26,7 +26,7 @@ hr {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  max-width: 360px;
+  max-width: 400px;
   border: 2px;
   border-radius: 100%;
   border-style: dashed solid;
@@ -36,11 +36,16 @@ hr {
 .content-circle {
   display: block;
   text-align: center;
-  width: 50%;
+  width: 80%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: black;
   font-weight: bolder;
+}
+
+#row-form {
+  display: flex;
+  justify-content: center;
 }
 
 .date-city-hour {
@@ -73,9 +78,6 @@ hr {
   justify-content: center;
 }
 
-.col-4 {
-}
-
 .ul-temp-pressure {
   text-align: center;
   padding: 0;
@@ -84,6 +86,7 @@ hr {
 }
 
 .ul-center-img {
+  display: block;
   text-align: center;
   padding: 0;
   line-height: 30px;
@@ -99,7 +102,6 @@ hr {
 .ul-wind-humidity {
   text-align: center;
   padding: 0;
-  line-height: 30px;
   border-width: 10px;
 }
 
@@ -130,7 +132,10 @@ hr {
 }
 
 #description {
+  display: inline;
   opacity: 0.6;
+}
+#description::first-letter {
   text-transform: capitalize;
 }
 
@@ -145,6 +150,7 @@ hr {
   margin-bottom: 0;
   padding: 15px;
   border: 1px solid white;
+  border-radius: 5px;
   max-width: auto;
 }
 #ul-days {
