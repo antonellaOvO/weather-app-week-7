@@ -39,7 +39,7 @@ hr {
   width: 80%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: black;
+  color: #191970;
   font-weight: bolder;
 }
 
@@ -54,15 +54,50 @@ hr {
 }
 
 .temp {
+  color: #191970;
   display: block;
   margin: 0 auto;
   margin-top: 20px;
   padding: 0;
-  opacity: 0.6;
 }
 
 .temp-now {
   font-size: 40px;
+}
+
+#link-celsius {
+  color: #191970;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#link-fahrenheit {
+  color: #191970;
+  text-decoration: none;
+}
+
+#link-celsius:hover {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#link-fahrenheit:hover {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#link-celsius.active {
+  color: #191970;
+  cursor: default;
+  text-decoration: none;
+}
+
+#link-fahrenheit.active {
+  color: #191970;
+  cursor: default;
+  text-decoration: none;
 }
 
 .fahrenheit {
@@ -78,11 +113,16 @@ hr {
   justify-content: center;
 }
 
+#middle-row {
+  color: #191970;
+  opacity: 0.8;
+  margin-top: 30px;
+}
+
 .ul-temp-pressure {
   text-align: center;
   padding: 0;
   line-height: 30px;
-  opacity: 0.6;
 }
 
 .ul-center-img {
@@ -92,11 +132,22 @@ hr {
   line-height: 30px;
 }
 
+#image-temp-now {
+  opacity: 1;
+}
+
+#description {
+  opacity: 1;
+}
+
 .ul-temp-visibility {
   text-align: center;
   padding: 0;
   line-height: 30px;
-  opacity: 0.6;
+}
+
+#wind-humidity-row {
+  opacity: 0.8;
 }
 
 .ul-wind-humidity {
@@ -112,14 +163,6 @@ hr {
 
 .pressure {
   text-align: center;
-}
-
-.img-forecast {
-  width: 60px;
-}
-
-#middle-row {
-  margin-top: 30px;
 }
 
 #wind-humidity-row {
@@ -140,26 +183,35 @@ hr {
 }
 
 #days {
-  text-align: center;
-  padding: 30px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 #col-days {
   display: block;
   margin: 0 auto;
-  margin-bottom: 0;
-  padding: 15px;
   border: 1px solid white;
   border-radius: 5px;
   max-width: auto;
 }
 #ul-days {
   display: block;
-  margin: 0 auto;
+  text-align: center;
   padding: 0;
 }
+
 #li-days {
   display: block;
+  text-align: center;
+  line-height: 50px;
+}
+
+.img-forecast {
   margin: 0 auto;
-  line-height: 30px;
+  width: 60px;
+}
+
+.temp-day-min {
+  opacity: 0.8;
 }

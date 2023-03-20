@@ -4,12 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
@@ -31,17 +26,15 @@
           <div class="content-circle">
             <ul class="temp">
               <li class="temp-now">
-                <span id="number-temp">20</span>º<span class="celsius">C</span>
-                |
-                <span class="fahrenheit">F</span>
+               <span id="number-temp">20</span>º<a id="link-celsius" href="" class="active"><span class="celsius">C</span></a> | <a id="link-fahrenheit" href=""><span class="fahrenheit">F</span></a>
               </li>
-              <li class="temp-feels">Feels like 15ºC</li>
+              <li class="temp-feels">Feels like <span id="feels-temp">15</span>ºC</li>
             </ul>
 
             <div id="middle-row" class="row">
               <div class="col-4">
                 <ul class="ul-temp-pressure">
-                  <li class="min-temp">Min <span id="min-temp">5</span>ºC</li>
+                  <li class="min-temp">Min <span id="min-temp">5</span>º<span id="unit-celsius-min">C</span></li>
                   <hr />
                   <li class="pressure">
                     Pressure
@@ -66,7 +59,7 @@
 
               <div class="col-4">
                 <ul class="ul-temp-visibility">
-                  <li>Max <span id="max-temp">20</span>ºC</li>
+                  <li>Max <span id="max-temp">20</span>º<span id="unit-celsius-max">C</span></li>
                   <hr />
                   <li>
                     Visibility
@@ -110,7 +103,7 @@
                 />
               </li>
               <li id="li-days" class="tomorrow">Tomorrow</li>
-              <li id="li-days" class="temp-tomorrow">15ºC</li>
+              <li id="li-days" class="temp-tomorrow-max"><span class="temp-day-max">15º</span> | <span class="temp-day-min">9º</span></li>
             </ul>
           </div>
 
@@ -123,8 +116,8 @@
                   alt=""
                 />
               </li>
-              <li id="li-days" class="tomorrow">Tomorrow</li>
-              <li id="li-days" class="temp-tomorrow">15ºC</li>
+              <li id="li-days" class="tuesday">Wednesday</li>
+              <li id="li-days" class="temp-tomorrow"><span class="temp-day-max">15º</span> | <span class="temp-day-min">9º</span></li>
             </ul>
           </div>
 
@@ -137,8 +130,8 @@
                   alt=""
                 />
               </li>
-              <li id="li-days" class="tomorrow">Tomorrow</li>
-              <li id="li-days" class="temp-tomorrow">15ºC</li>
+              <li id="li-days" class="thursday">Thursday</li>
+              <li id="li-days" class="temp-tomorrow"><span class="temp-day-max">15º</span> | <span class="temp-day-min">9º</span></li>
             </ul>
           </div>
 
@@ -151,8 +144,8 @@
                   alt=""
                 />
               </li>
-              <li id="li-days" class="tomorrow">Tomorrow</li>
-              <li id="li-days" class="temp-tomorrow">15ºC</li>
+              <li id="li-days" class="friday">Friday</li>
+              <li id="li-days" class="temp-tomorrow"><span class="temp-day-max">15º</span> | <span class="temp-day-min">9º</span></li>
             </ul>
           </div>
 
@@ -165,8 +158,8 @@
                   alt=""
                 />
               </li>
-              <li id="li-days" class="tomorrow">Tomorrow</li>
-              <li id="li-days" class="temp-tomorrow">15ºC</li>
+              <li id="li-days" class="saturday">Saturday</li>
+              <li id="li-days" class="temp-tomorrow"><span class="temp-day-max">15º</span> | <span class="temp-day-min">9º</span></li>
             </ul>
           </div>
 
@@ -179,8 +172,8 @@
                   alt=""
                 />
               </li>
-              <li id="li-days" class="tomorrow">Tomorrow</li>
-              <li id="li-days" class="temp-tomorrow">15ºC</li>
+              <li id="li-days" class="sunday">Sunday</li>
+              <li id="li-days" class="temp-tomorrow"><span class="temp-day-max">15º</span> | <span class="temp-day-min">9º</span></li>
             </ul>
           </div>
         </div>
