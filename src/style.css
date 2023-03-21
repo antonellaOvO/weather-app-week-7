@@ -15,22 +15,29 @@ hr {
   margin: 0 auto;
   margin-top: 40px;
   margin-bottom: 30px;
-  max-width: 700px;
+  max-width: 800px;
   border: 3px black;
   border-style: groove;
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/070/466/original/background.jpg?1678221783");
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/072/905/original/abstract_background.jpg?1679414586");
   background-size: cover;
 }
 
 .circle {
+  color: white;
+  font-weight: bolder;
   display: flex;
   justify-content: center;
   margin: 0 auto;
   max-width: 400px;
-  border: 2px;
+  border: 5px;
   border-radius: 100%;
   border-style: dashed solid;
+  border-color: #16a49a;
   background-clip: padding-box;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/072/904/original/background_weather.jpg?1679414204");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .content-circle {
@@ -39,7 +46,7 @@ hr {
   width: 80%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: #191970;
+  color: white;
   font-weight: bolder;
 }
 
@@ -50,11 +57,11 @@ hr {
 
 .date-city-hour {
   margin: 0;
-  margin-top: 20px;
+  margin-top: 15px;
+  font-size: 18px;
 }
 
 .temp {
-  color: #191970;
   display: block;
   margin: 0 auto;
   margin-top: 20px;
@@ -66,13 +73,13 @@ hr {
 }
 
 #link-celsius {
-  color: #191970;
+  color: white;
   cursor: pointer;
   text-decoration: none;
 }
 
 #link-fahrenheit {
-  color: #191970;
+  color: white;
   text-decoration: none;
 }
 
@@ -89,13 +96,13 @@ hr {
 }
 
 #link-celsius.active {
-  color: #191970;
+  color: white;
   cursor: default;
   text-decoration: none;
 }
 
 #link-fahrenheit.active {
-  color: #191970;
+  color: white;
   cursor: default;
   text-decoration: none;
 }
@@ -114,9 +121,10 @@ hr {
 }
 
 #middle-row {
-  color: #191970;
-  opacity: 0.8;
-  margin-top: 30px;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  border-radius: 30px;
 }
 
 .ul-temp-pressure {
@@ -133,11 +141,9 @@ hr {
 }
 
 #image-temp-now {
-  opacity: 1;
 }
 
 #description {
-  opacity: 1;
 }
 
 .ul-temp-visibility {
@@ -147,7 +153,6 @@ hr {
 }
 
 #wind-humidity-row {
-  opacity: 0.8;
 }
 
 .ul-wind-humidity {
@@ -167,33 +172,34 @@ hr {
 
 #wind-humidity-row {
   margin-top: 5px;
-  opacity: 0.6;
 }
 
 #image-temp-now {
-  opacity: 1;
 }
 
 #description {
   display: inline;
-  opacity: 0.6;
 }
 #description::first-letter {
   text-transform: capitalize;
 }
 
 #days {
+  display: flex;
   margin: 0 auto;
+  gap: 10px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
 #col-days {
-  display: block;
-  margin: 0 auto;
-  border: 1px solid white;
+  margin: 0;
+  padding: 10px;
+  max-width: 110px;
+  border: 3px solid white;
   border-radius: 5px;
   max-width: auto;
+  border-top-width: 10px;
 }
 #ul-days {
   display: block;
@@ -213,7 +219,6 @@ hr {
 }
 
 .temp-day-min {
-  opacity: 0.8;
 }
 
 .sign {

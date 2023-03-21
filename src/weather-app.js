@@ -241,3 +241,32 @@ function displayCelsiusTemp(event) {
 }
 let celsius = document.querySelector("#link-celsius");
 celsius.addEventListener("click", displayCelsiusTemp);
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#days");
+  let forecastHTML = `<div id="days" class="row">`;
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div id="col-days" class="col-2">
+  <ul id="ul-days" class="tomorrow">
+    <li id="li-days" class="img-tomorrow">
+      <li id="li-days" class="tomorrow">${day}</li>
+      <img
+        class="img-forecast"
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/412/original/rainy.png?1674061772"
+        alt=""
+      />
+    </li>
+     <li id="li-days" class="temp-tomorrow-max"><span class="temp-day-max">15º</span> | <span class="temp-day-min">9º</span></li>
+  </ul>
+</div>`;
+
+    forecastElement.innerHTML = forecastHTML;
+    console.log(forecastHTML);
+  });
+  forecastHTML = forecastHTML + `</div>`;
+}
+displayForecast();
