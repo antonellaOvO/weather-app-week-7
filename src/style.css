@@ -8,33 +8,37 @@ hr {
 }
 
 .mini-container {
-  color: white;
+  color: black;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   padding: 20px;
   margin: 0 auto;
   margin-top: 40px;
-  margin-bottom: 30px;
-  max-width: 800px;
+  margin-bottom: 10px;
+  max-width: 850px;
+  max-height: auto;
   border: 3px black;
   border-style: groove;
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/072/905/original/abstract_background.jpg?1679414586");
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/073/515/original/bakcground_nature_2.jpg?1679739092");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .circle {
-  color: white;
+  color: black;
   font-weight: bolder;
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 600px;
+  height: 425px;
   border: 5px;
   border-radius: 100%;
   border-style: dashed solid;
   border-color: #16a49a;
   background-clip: padding-box;
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/072/904/original/background_weather.jpg?1679414204");
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/073/517/original/nature_mountain.jpg?1679740250");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -53,12 +57,30 @@ hr {
 #row-form {
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
-.date-city-hour {
+#date-city-hour {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  font-weight: bolder;
+  padding: 0;
   margin: 0;
-  margin-top: 15px;
-  font-size: 18px;
+  margin-top: 20px;
+}
+
+#date-hour {
+  line-height: 10px;
+  padding: 0;
+}
+
+#only.city {
+  display: inline;
+  padding: 0;
 }
 
 .temp {
@@ -69,7 +91,7 @@ hr {
 }
 
 .temp-now {
-  font-size: 40px;
+  font-size: 50px;
 }
 
 #link-celsius {
@@ -108,11 +130,11 @@ hr {
 }
 
 .fahrenheit {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .temp-feels {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .row {
@@ -128,14 +150,17 @@ hr {
 }
 
 .ul-temp-pressure {
+  font-size: 25px;
+  line-height: 30px;
   text-align: center;
   padding: 0;
-  line-height: 30px;
 }
 
 .ul-center-img {
   display: block;
   text-align: center;
+  font-size: 25px;
+  line-height: 30px;
   padding: 0;
   line-height: 30px;
 }
@@ -148,11 +173,14 @@ hr {
 
 .ul-temp-visibility {
   text-align: center;
+  font-size: 25px;
+  line-height: 30px;
   padding: 0;
   line-height: 30px;
 }
 
 #wind-humidity-row {
+  font-size: 25px;
 }
 
 .ul-wind-humidity {
@@ -188,18 +216,20 @@ hr {
   display: flex;
   margin: 0 auto;
   gap: 10px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 
 #col-days {
+  font-size: 15px;
   margin: 0;
-  padding: 10px;
-  max-width: 110px;
-  border: 3px solid white;
+  margin-top: 10px;
+  padding: 5px;
+  max-width: 100px;
+  border: 3px solid black;
   border-radius: 5px;
   max-width: auto;
-  border-top-width: 10px;
+  border-top-width: 13px;
 }
 #ul-days {
   display: block;
@@ -215,10 +245,7 @@ hr {
 
 .img-forecast {
   margin: 0 auto;
-  width: 60px;
-}
-
-.temp-day-min {
+  width: 90px;
 }
 
 .sign {
@@ -232,4 +259,27 @@ hr {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: darkgrey;
+}
+
+#li-day {
+  font-size: 38px;
+  font-weight: bolder;
+}
+
+.temp-day-max {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.temp-day-min {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+#city-input {
+  font-size: 20px;
+}
+
+.btn-secondary {
+  font-size: 20px;
 }

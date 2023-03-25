@@ -3,8 +3,6 @@ let units = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=${units}`;
 
 function showPosition(position) {
-  console.log(position);
-
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let key = "3f6be1c407b0d9d1933561808db358ba";
@@ -12,7 +10,6 @@ function showPosition(position) {
   let apiCurrentPositionUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&lang={lang}&units=${units}`;
 
   function displayCurrentPosition(response) {
-    console.log(apiCurrentPositionUrl);
     let now = new Date();
     let day = now.getDay();
     let numberDay = now.getDate();
@@ -85,15 +82,25 @@ function showPosition(position) {
 
     let description = document.querySelector("#description");
     description.innerHTML = response.data.weather[0].description;
+
+    getForecast(response.data.coord);
   }
   axios.get(apiCurrentPositionUrl).then(displayCurrentPosition);
 }
 
 navigator.geolocation.getCurrentPosition(showPosition);
 
-function displayInputSearch(response) {
-  console.log(apiUrl);
+function getForecast(coordinates) {
+  let apiKey = "ccdfa0t87033541f5e32eba05o417fd7";
+  let apiUnits = "metric";
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
 
+  let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}`;
+  axios.get(apiUrlForecast).then(displayForecast);
+}
+
+function displayInputSearch(response) {
   let now = new Date();
   let day = now.getDay();
   let numberDay = now.getDate();
@@ -166,6 +173,8 @@ function displayInputSearch(response) {
 
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].description;
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -215,6 +224,8 @@ function displayFahrenheitTemp(event) {
   unitCelsiusMin.innerHTML = "F";
   let unitCelsiusMax = document.querySelector("#unit-celsius-max");
   unitCelsiusMax.innerHTML = "F";
+  let unitCelsiusFeels = document.querySelector("#unit-celsius-feels");
+  unitCelsiusFeels.innerHTML = "F";
 }
 
 let fahrenheit = document.querySelector("#link-fahrenheit");
@@ -242,31 +253,45 @@ function displayCelsiusTemp(event) {
 let celsius = document.querySelector("#link-celsius");
 celsius.addEventListener("click", displayCelsiusTemp);
 
-function displayForecast() {
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
   let forecastElement = document.querySelector("#days");
   let forecastHTML = `<div id="days" class="row">`;
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let forecast = response.data.daily;
+  console.log(response.data);
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div id="col-days" class="col-2">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 7) {
+      forecastHTML =
+        forecastHTML +
+        `<div id="col-days" class="col-2">
   <ul id="ul-days" class="tomorrow">
     <li id="li-days" class="img-tomorrow">
-      <li id="li-days" class="tomorrow">${day}</li>
+      <li id="li-day" class="tomorrow">${formatDate(forecastDay.time)}</li>
       <img
         class="img-forecast"
-        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/063/412/original/rainy.png?1674061772"
+        src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+          forecastDay.condition.icon
+        }.png"
         alt=""
       />
     </li>
-     <li id="li-days" class="temp-tomorrow-max"><span class="temp-day-max">15º</span> | <span class="temp-day-min">9º</span></li>
+     <li id="li-days" class="temp-tomorrow-max"><span class="temp-day-max">${Math.round(
+       forecastDay.temperature.maximum
+     )}º</span> | <span class="temp-day-min">${Math.round(
+          forecastDay.temperature.minimum
+        )}º</span></li>
   </ul>
 </div>`;
-
-    forecastElement.innerHTML = forecastHTML;
-    console.log(forecastHTML);
+    }
   });
+
   forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
