@@ -17,7 +17,8 @@ hr {
   margin-bottom: 10px;
   max-width: 850px;
   max-height: auto;
-  border: 3px black;
+  border: 1px #c0c0c0;
+  border-radius: 40px;
   border-style: groove;
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/073/515/original/bakcground_nature_2.jpg?1679739092");
   background-size: cover;
@@ -54,35 +55,6 @@ hr {
   font-weight: bolder;
 }
 
-#row-form {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-#date-city-hour {
-  display: flex;
-  justify-content: center;
-  gap: 100px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 25px;
-  font-weight: bolder;
-  padding: 0;
-  margin: 0;
-  margin-top: 20px;
-}
-
-#date-hour {
-  line-height: 10px;
-  padding: 0;
-}
-
-#only.city {
-  display: inline;
-  padding: 0;
-}
-
 .temp {
   display: block;
   margin: 0 auto;
@@ -92,6 +64,126 @@ hr {
 
 .temp-now {
   font-size: 50px;
+}
+
+.fahrenheit {
+  font-size: 40px;
+}
+
+.temp-feels {
+  font-size: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.ul-temp-pressure {
+  font-size: 25px;
+  line-height: 30px;
+  text-align: center;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.min-temp {
+  display: inline;
+  text-align: center;
+}
+
+.ul-center-img {
+  display: block;
+  text-align: center;
+  font-size: 25px;
+  line-height: 30px;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.ul-temp-visibility {
+  text-align: center;
+  font-size: 25px;
+  line-height: 30px;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.ul-wind-humidity {
+  text-align: center;
+  padding: 0;
+  border-width: 10px;
+}
+
+.pressure {
+  text-align: center;
+}
+
+.img-forecast {
+  margin: 0 auto;
+  width: 90px;
+}
+
+.sign {
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  color: #c0c0c0;
+}
+
+.link-code {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: darkgrey;
+}
+
+.temp-day-max {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.temp-day-min {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.btn-secondary {
+  font-size: 20px;
+}
+
+#row-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#date-city-hour {
+  display: flex;
+  align-content: flex-start;
+  padding: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  font-weight: bolder;
+  padding: 0;
+  margin: 0;
+}
+
+#date-hour {
+  display: block;
+  margin-left: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+#only-city {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  padding: 0;
+  margin: 0;
 }
 
 #link-celsius {
@@ -129,73 +221,20 @@ hr {
   text-decoration: none;
 }
 
-.fahrenheit {
-  font-size: 40px;
-}
-
-.temp-feels {
-  font-size: 20px;
-}
-
-.row {
-  display: flex;
-  justify-content: center;
-}
-
 #middle-row {
   margin-top: 20px;
+  padding: 13px;
   background-color: rgba(0, 0, 0, 0.5);
   max-width: 500px;
   border-radius: 30px;
 }
 
-.ul-temp-pressure {
-  font-size: 25px;
-  line-height: 30px;
-  text-align: center;
-  padding: 0;
-}
-
-.ul-center-img {
-  display: block;
-  text-align: center;
-  font-size: 25px;
-  line-height: 30px;
-  padding: 0;
-  line-height: 30px;
-}
-
-#image-temp-now {
-}
-
 #description {
-}
-
-.ul-temp-visibility {
-  text-align: center;
-  font-size: 25px;
-  line-height: 30px;
-  padding: 0;
-  line-height: 30px;
+  margin-bottom: 0;
 }
 
 #wind-humidity-row {
   font-size: 25px;
-}
-
-.ul-wind-humidity {
-  text-align: center;
-  padding: 0;
-  border-width: 10px;
-}
-
-.min-temp {
-  display: inline;
-  text-align: center;
-}
-
-.pressure {
-  text-align: center;
 }
 
 #wind-humidity-row {
@@ -243,43 +282,11 @@ hr {
   line-height: 50px;
 }
 
-.img-forecast {
-  margin: 0 auto;
-  width: 90px;
-}
-
-.sign {
-  display: block;
-  text-align: center;
-  margin-top: 5px;
-  color: #c0c0c0;
-}
-
-.link-code {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: darkgrey;
-}
-
 #li-day {
   font-size: 38px;
   font-weight: bolder;
 }
 
-.temp-day-max {
-  font-size: 20px;
-  font-weight: bolder;
-}
-
-.temp-day-min {
-  font-size: 20px;
-  font-weight: bolder;
-}
-
 #city-input {
-  font-size: 20px;
-}
-
-.btn-secondary {
   font-size: 20px;
 }
